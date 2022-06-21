@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="enums\" />
+    <Folder Include="grids\" />
+    <Folder Include="helpers\" />
+    <Folder Include="models\" />
+    <Folder Include="solutions\" />
+    <Folder Include="specification\" />
+  </ItemGroup>
+
+</Project>
