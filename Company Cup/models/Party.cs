@@ -10,7 +10,6 @@ namespace CompanyCup.models
         public Dimension Position { get; set; }
         public List<PartyMember> Members { get; set; }
         public int StepAllowance { get; set; }
-        public Quota Quota { get; set; }
         public List<Resource> ResourcesCollected { get; set; }
 
         public Party(Dimension position, List<PartyMember> members, int stepAllowance,
@@ -19,7 +18,6 @@ namespace CompanyCup.models
             Position = position;
             Members = members;
             StepAllowance = stepAllowance;
-            Quota = quota;
 
             CalculateAdditionalStepAllowance();
         }
