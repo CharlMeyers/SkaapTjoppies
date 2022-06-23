@@ -9,10 +9,11 @@ namespace CompanyCup.models
         public int x;
         public int y;
 
-        public Dimension(IReadOnlyList<string> dimensions)
+        public Dimension(string dimensions)
         {
-            x = int.Parse(dimensions[0]);
-            y = int.Parse(dimensions[1]);
+            var dimentionList = dimensions.Split(',');
+            x = int.Parse(dimentionList[0]);
+            y = int.Parse(dimentionList[1]);
         }
     }
 }

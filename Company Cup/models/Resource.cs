@@ -10,5 +10,11 @@ namespace CompanyCup.models
         public Dimension Position { get; set; }
         public int Points { get; set; }
         public int Quota { get; set; }
+
+        public Resource(string name, string dimention)
+        {
+            Name = name;
+            Position = new Dimension(dimention);
+        }
     }
 }
