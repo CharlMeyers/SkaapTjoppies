@@ -8,6 +8,5 @@ namespace CompanyCup.models
     public class PartyMember
     {
         public PartyMemberType Type { get; set; }
-
     }
 }

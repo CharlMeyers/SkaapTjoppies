@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CompanyCup.enums
 {
-    public enum ResourcePoints
+    public enum ResourceType
     {
         Coal = 200,
         Fish = 400,

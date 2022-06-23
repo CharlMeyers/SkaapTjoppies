@@ -9,8 +9,6 @@ namespace CompanyCup.models
     {
         public string Name { get; set; }
         public Dimension Position { get; set; }
-        public ResourcePoints Points { get; set; }
-        public int Quota { get; set; }
 
         public Resource(string name, string dimention)
         {
