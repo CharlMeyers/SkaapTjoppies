@@ -2,6 +2,7 @@
 using Practice;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,13 +51,14 @@ namespace CompanyCup
 
                 if (line.Contains("quota_multiplier", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    var quotaMultiplier = int.Parse(line.Substring(line.IndexOf("=") + 1));
+                    var quotaMultiplier = decimal.Parse(line.Substring(line.IndexOf("=") + 1), CultureInfo.InvariantCulture);
                     world.quotaMultiplier = quotaMultiplier;
                 }
 
                 if (line.Contains("map_size=", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    var mapDetails = new Dimension(line.Substring(line.IndexOf("=") + 1));
+                    var mapSize = new Dimension(line.Substring(line.IndexOf("=") + 1));
+                    world.size = mapSize;
                     for (int i = Array.IndexOf(lines, line) + 1; i < lines.Length; i++)
                     {
                         line = lines[i];

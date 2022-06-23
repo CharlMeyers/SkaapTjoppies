@@ -11,7 +11,7 @@ namespace CompanyCup.models
     {
         public List<Resource> resources { get; set; }
         public Quota quota { get; set; }
-        public int quotaMultiplier { get; set; }
+        public decimal quotaMultiplier { get; set; }
         public Dimension size { get; set; }
         public List<List<LandscapeType>> Lanscape { get; set; }
 
@@ -37,6 +37,14 @@ namespace CompanyCup.models
                 }
             }
             Lanscape.Add(lanscapeRow);
+        }
+
+        public Answer Run()
+        {
+            var answer = new Answer();
+            answer.Path = ShortestPath.GetShortestPath(this, 0, 0, size.x, size.y, null);
+
+            return answer; ;
         }
     }
 }

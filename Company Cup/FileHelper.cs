@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace Practice
             return lines;
         }
 
-        public static string Write(string file, List<string> objectToPrint)
+        public static string Write(string file, object objectToPrint)
         {
             DateTime currentTime = DateTime.Now;
 
@@ -31,10 +32,7 @@ namespace Practice
 
             using (StreamWriter fileWriter = new StreamWriter(outputFilepath))
             {
-                foreach (var item in objectToPrint)
-                {
-                    fileWriter.WriteLine(item);
-                }
+                fileWriter.Write(JsonConvert.SerializeObject(objectToPrint));
             }
 
             return outputFilepath;
