@@ -2,6 +2,7 @@
 using CompanyCup.helpers;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CompanyCup.models
@@ -22,7 +23,20 @@ namespace CompanyCup.models
 
         public void AddLandscape(string landscapeDetails)
         {
-            Lanscape.Add(landscapeDetails.Split(',').ToLandscapeType());
+            var lanscapeRow = new List<LandscapeType>();
+            var currentRow = Lanscape.Count;
+            foreach (var item in landscapeDetails.Split(',').Select((value, i) => (value, i)))
+            {
+                if (resources.Any(r => r.Position.y == item.i && r.Position.x == currentRow))
+                {
+                    lanscapeRow.Add(LandscapeType.Resource);
+                }
+                else
+                {
+                    lanscapeRow.Add(item.value.ToLanscapeType().GetValueOrDefault());
+                }
+            }
+            Lanscape.Add(lanscapeRow);
         }
     }
 }

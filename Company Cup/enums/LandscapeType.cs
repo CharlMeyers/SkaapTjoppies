@@ -6,6 +6,7 @@ namespace CompanyCup.enums
 {
     public enum LandscapeType
     {
+        Resource = 0,
         Snow = 1,
         Ice = 5,
         ThickSnow = 10,
