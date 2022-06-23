@@ -14,7 +14,7 @@ namespace CompanyCup.models
         {
             var quotaList = quotas.Split(',');
             Coal = int.Parse(quotaList[0]);
-            Fish = int.Parse(quotaList[1);
+            Fish = int.Parse(quotaList[1]);
             ScrapMetal = int.Parse(quotaList[2]);
         }
     }

@@ -11,7 +11,7 @@ namespace CompanyCup.models
 
         public Dimension(string dimensions)
         {
-            var dimentionList = dimensions.Split(',');
+            var dimentionList = dimensions.Contains(',') ? dimensions.Split(',') : dimensions.Split('x');
             x = int.Parse(dimentionList[0]);
             y = int.Parse(dimentionList[1]);
         }

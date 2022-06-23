@@ -8,8 +8,8 @@ namespace CompanyCup
     {
         static void Main(string[] args)
         {
-            var gridNum = "1";
-            Parser.ParseFile($"{gridNum}.txt");
+            var gridNum = "0";
+            var world = Parser.ParseFile($"{gridNum}.txt");
 
 
             Console.WriteLine($"Run started at {DateTime.Now.TimeOfDay}");
