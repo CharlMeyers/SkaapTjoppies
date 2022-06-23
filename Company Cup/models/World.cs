@@ -6,6 +6,11 @@ namespace CompanyCup.models
 {
     public class World
     {
-        public List<Resource> ResourcesAvailable { get; set; }
+        public List<Resource> resources { get; set; }
+
+        public World()
+        {
+            resources = new List<Resource>();
+        }
     }
 }

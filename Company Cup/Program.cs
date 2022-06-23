@@ -1,5 +1,6 @@
 ﻿using Practice;
 using System;
+using System.Linq;
 
 namespace CompanyCup
 {
@@ -7,9 +8,8 @@ namespace CompanyCup
     {
         static void Main(string[] args)
         {
-
-            var lines = FileHelper.Read($"test.txt");
-
+            var gridNum = "1";
+            Parser.ParseFile($"{gridNum}.txt");
 
 
             Console.WriteLine($"Run started at {DateTime.Now.TimeOfDay}");

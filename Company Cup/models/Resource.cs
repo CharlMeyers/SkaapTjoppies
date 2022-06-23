@@ -7,7 +7,13 @@ namespace CompanyCup.models
 {
     public class Resource
     {
-        public ResourceType Type { get; set; }
+        public string Name { get; set; }
         public Dimension Position { get; set; }
+
+        public Resource(string name, string dimention)
+        {
+            Name = name;
+            Position = new Dimension(dimention);
+        }
     }
 }
