@@ -50,6 +50,18 @@ namespace CompanyCup
                     var quotaMultiplier = int.Parse(line.Substring(line.IndexOf("=")));
                     world.quotaMultiplier = quotaMultiplier;
                 }
+
+                if (line.Contains("map_size=", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    var mapDetails = new Dimension(line.Substring(line.IndexOf("=")));
+                    for (int i = Array.IndexOf(lines, line) + 1; i < lines.Length; i++)
+                    {
+                        line = lines[i];
+                        var resource = new Resource(resourceName, line);
+
+                        world.resources.Add(resource);
+                    }
+                }
             }
         }
     }
