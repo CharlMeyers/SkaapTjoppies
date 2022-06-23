@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CompanyCup.enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,7 +9,7 @@ namespace CompanyCup.models
     {
         public string Name { get; set; }
         public Dimension Position { get; set; }
-        public int Points { get; set; }
+        public ResourcePoints Points { get; set; }
         public int Quota { get; set; }
 
         public Resource(string name, string dimention)
